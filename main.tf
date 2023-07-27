@@ -26,8 +26,8 @@ provider "google" {
 }
 
 resource "google_project_iam_member" "iam" {
-  project = "crsvc-labs-iac-common"
+  project = "MyPOC"
   role    = "roles/editor"
 
-  member = "user:schopdekar@avaya.com"
+  member = "user:aditya.chawla2204@gmail.com"
 }
