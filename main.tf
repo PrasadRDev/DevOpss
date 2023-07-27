@@ -33,32 +33,6 @@ provider "google" {
   ]
 }
 
-provider "google" {
-  access_token    = data.google_service_account_access_token.tf_execute_sa.access_token
-  request_timeout = "1800s"
-}
-
-provider "google-beta" {
-  access_token    = data.google_service_account_access_token.tf_execute_sa.access_token
-  request_timeout = "1800s"
-}
-
-# impersonate Terraform Master service account
-# to Obtain temporary access token for Terrafrom Execute Service account
-#
-data "google_service_account_access_token" "tf_execute_sa" {
-  provider               = google.impersonation
-  target_service_account = var.sa_account
-  scopes                 = ["userinfo-email", "cloud-platform"]
-  lifetime               = "3600s"
-}
-
-# Set TF Execute Service account as variable
-variable "sa_account" {
-  description = "SA Account"
-  type        = string
-  default     = "root-sa-terraform@mypoc-389310.iam.gserviceaccount.com"
-}
 
 resource "google_project_iam_member" "iam" {
   project = "MyPOC"
