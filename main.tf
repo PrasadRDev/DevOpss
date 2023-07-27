@@ -26,7 +26,6 @@ terraform {
 }
 
 provider "google" {
-  credentials = var.google_credentials
   alias = "impersonation"
   scopes = [
     "https://www.googleapis.com/auth/cloud-platform",
