@@ -57,7 +57,6 @@ data "google_service_account_access_token" "tf_execute_sa" {
 variable "sa_account" {
   description = "SA Account"
   type        = string
-  sensitive   = true
   default     = "root-sa-terraform@mypoc-389310.iam.gserviceaccount.com"
 }
 
