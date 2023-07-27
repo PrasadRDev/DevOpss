@@ -37,5 +37,5 @@ provider "google" {
 resource "google_project_iam_member" "iam" {
   project = "MyPOC"
   role    = "roles/editor"
-  member = "user:aditya.chawla2204@gmail.com"
+  member = "user:prasadrotti027@gmail.com"
 }
